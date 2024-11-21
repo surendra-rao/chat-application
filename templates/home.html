@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_static.css') }}">
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Chats</h2>
+                <input type="text" placeholder="Search" class="search-input">
+            </div>
+            <div class="chat-list">
+                <!-- Chat Items -->
+                <!-- <div class="chat-item">
+                    <img src="user1.jpg" alt="User Avatar" class="avatar">
+                    <div class="chat-info">
+                        <h3>User Name</h3>
+                        <p>Last message...</p>
+                    </div>
+                    <span class="chat-time">18:00</span>
+                </div> -->
+                <!-- More chat items... -->
+            </div>
+        </div>
+
+        <!-- Main Chat Window -->
+        <div class="chat-window">
+            <div class="chat-header">
+                <!-- <h3>Chat with User</h3> -->
+            </div>
+            <div class="chat-messages">
+                <!-- Messages -->
+                <!-- <div class="message received">
+                    <p>Hi there!</p>
+                    <span class="message-time">11:50</span>
+                </div>
+                <div class="message sent">
+                    <p>Hello!</p>
+                    <span class="message-time">11:51</span>
+                </div> -->
+                <!-- More messages... -->
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message" id = "chat-text">
+                <button type="button" id ="send-button">Send</button> 
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

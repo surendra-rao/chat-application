@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Login</h2>
+<div class="container">
+    <div class="form-container">
+        <div class="form-toggle">
+            <button id="login-toggle">Login</button>
+            <button id="register-toggle">Register</button>
+        </div>
+        <form id="login-form" class="form">
+            <h2>Login</h2>
+            <input id = "username" type="text" placeholder="Username" required>
+            <input id = "password" type="password" placeholder="Password" required>
+            <button id="submit">Login</button>
+        </form>
+        <form id="register-form" class="form" style="display: none;">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button id ="id ">Register</button>
+        </form>
+    </div>
+</div>
+<script>
+    const loginToggle = document.getElementById('login-toggle');
+    const registerToggle = document.getElementById('register-toggle');
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+
+    loginToggle.addEventListener('click', () => {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        loginToggle.classList.add('active');
+        registerToggle.classList.remove('active');
+    });
+
+    registerToggle.addEventListener('click', () => {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        loginToggle.classList.remove('active');
+        registerToggle.classList.add('active');
+    });
+</script>
+</body>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
+
